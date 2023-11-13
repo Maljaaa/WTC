@@ -1,26 +1,29 @@
 package christmas.view;
 
 import static camp.nextstep.edu.missionutils.Console.readLine;
+import static christmas.view.Error.*;
+import static christmas.view.Format.*;
+import static christmas.view.Show.*;
 
 public class InputView {
 
-    private String numberFormat = "-?\\\\d+";
-
     public int readDate() {
-        System.out.println("12월 중 식당 예상 방문 날짜는 언제인가요? (숫자만 입력해 주세요!");
-        isInt(readLine());
+        System.out.println(READ_DATE.getMessage());
+        String date = readLine();
 
-        return Integer.parseInt(readLine());
+        isInt(date);
+
+        return Integer.parseInt(date);
     }
 
     private void isInt(String date) {
-        if (!date.matches(numberFormat)) {
-            throw new IllegalArgumentException("[ERROR] 유효하지 않은 날짜입니다. 다시 입력해 주세요.");
+        if (!date.matches(NUMBER.getFormat())) {
+            throw new IllegalArgumentException(INVALID_DATE.getMessage());
         }
     }
 
     public String readOrder() {
-        System.out.println("주문하실 메뉴를 메뉴와 개수를 알려 주세요. (e.g. 해산물파스타-2,레드와인-1,초코케이크-1)");
+        System.out.println(READ_ORDER.getMessage());
 
         return readLine();
     }
