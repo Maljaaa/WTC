@@ -4,10 +4,19 @@ import static camp.nextstep.edu.missionutils.Console.readLine;
 
 public class InputView {
 
+    private String numberFormat = "-?\\\\d+";
+
     public int readDate() {
         System.out.println("12월 중 식당 예상 방문 날짜는 언제인가요? (숫자만 입력해 주세요!");
+        isInt(readLine());
 
         return Integer.parseInt(readLine());
+    }
+
+    private void isInt(String date) {
+        if (!date.matches(numberFormat)) {
+            throw new IllegalArgumentException("[ERROR] 유효하지 않은 날짜입니다. 다시 입력해 주세요.");
+        }
     }
 
     public String readOrder() {
@@ -15,4 +24,6 @@ public class InputView {
 
         return readLine();
     }
+
+
 }
