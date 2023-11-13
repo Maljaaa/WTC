@@ -10,6 +10,7 @@ public class OutputView {
 
     public void printHello() {
         System.out.println(PRINT_HELLO.getMessage());
+        System.out.println();
     }
 
     public void printEventPreview(int date) {
