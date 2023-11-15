@@ -3,12 +3,14 @@ package christmas.service;
 import christmas.model.menu.MenuAllPrice;
 import christmas.model.menu.MenuCount;
 import christmas.model.event.EventPrice;
+import christmas.view.utils.Price;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static christmas.model.event.utils.EventPriceStandard.*;
 import static christmas.service.utils.Benfits.*;
+import static christmas.view.utils.Price.*;
 
 public class EventService {
 
@@ -83,31 +85,31 @@ public class EventService {
     }
 
     private void isDdayBenefitPrice(EventPrice eventPrice, List<Integer> price) {
-        if(eventPrice.getdDayEventPrice() != 0) {
+        if(eventPrice.getdDayEventPrice() != ZERO.getPrice()) {
             price.add(eventPrice.getdDayEventPrice());
         }
     }
 
     private void isWeekdayBenefitPrice(EventPrice eventPrice, List<Integer> price) {
-        if(eventPrice.getWeekdayEventPrice() != 0) {
+        if(eventPrice.getWeekdayEventPrice() != ZERO.getPrice()) {
             price.add(eventPrice.getWeekdayEventPrice());
         }
     }
 
     private void isHolidayBenefitPrice(EventPrice eventPrice, List<Integer> price) {
-        if(eventPrice.getHolidayEventPrice() != 0) {
+        if(eventPrice.getHolidayEventPrice() != ZERO.getPrice()) {
             price.add(eventPrice.getHolidayEventPrice());
         }
     }
 
     private void isSpecialBenefitPrice(EventPrice eventPrice, List<Integer> price) {
-        if(eventPrice.getSpecialEventPrice() != 0) {
+        if(eventPrice.getSpecialEventPrice() != ZERO.getPrice()) {
             price.add(eventPrice.getSpecialEventPrice());
         }
     }
 
     private void isGiveAwayBenefitPrice(EventPrice eventPrice, List<Integer> price) {
-        if(eventPrice.getGiveAwayEventPrice() != 0) {
+        if(eventPrice.getGiveAwayEventPrice() != ZERO.getPrice()) {
             price.add(eventPrice.getGiveAwayEventPrice());
         }
     }
