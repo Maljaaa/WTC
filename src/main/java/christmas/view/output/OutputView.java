@@ -10,9 +10,10 @@ import static christmas.view.utils.Show.*;
 
 public class OutputView {
 
+    private static final NumberFormat numberFormat = NumberFormat.getInstance();
+
     public void printHello() {
-        System.out.println(PRINT_HELLO.getMessage());
-        System.out.println();
+        printMessage(PRINT_HELLO.getMessage());
     }
 
     public void printEventPreview(String date) {
@@ -20,8 +21,7 @@ public class OutputView {
     }
 
     public void printOrderMenu(List<String> menu, List<Integer> count) {
-        System.out.println();
-        System.out.println(PRINT_ORDER_MENU.getMessage());
+        printMessage(PRINT_ORDER_MENU.getMessage());
 
         IntStream.range(0, menu.size())
                 .mapToObj(i -> menu.get(i) + " " + count.get(i) + COUNT.getFormat())
@@ -29,17 +29,12 @@ public class OutputView {
     }
 
     public void printAllPrice(int allPrice) {
-        System.out.println();
-        System.out.println(PRINT_ALL_PRICE.getMessage());
-
-        NumberFormat numberFormat = NumberFormat.getInstance();
-        String formattedAllPrice = numberFormat.format(allPrice);
-        System.out.println(formattedAllPrice + WON.getFormat());
+        printMessage(PRINT_ALL_PRICE.getMessage());
+        printPrice(allPrice);
     }
 
     public void printGiveawayMenu(boolean give) {
-        System.out.println();
-        System.out.println(PRINT_GIVEAWAY_MENU.getMessage());
+        printMessage(PRINT_GIVEAWAY_MENU.getMessage());
 
         if (give) {
             System.out.println(PRINT_CHAMPAGNE.getMessage());
@@ -51,10 +46,8 @@ public class OutputView {
     }
 
     public void printBenefitDetails(List<String> benefits, List<Integer> prices) {
-        System.out.println();
-        System.out.println(PRINT_BENEFIT_DETAILS.getMessage());
+        printMessage(PRINT_BENEFIT_DETAILS.getMessage());
 
-        NumberFormat numberFormat = NumberFormat.getInstance();
         IntStream.range(0, benefits.size())
                 .mapToObj(i -> benefits.get(i) + COLON.getFormat() + MINUS.getFormat() + numberFormat.format(prices.get(i)) + WON.getFormat())
                 .forEach(System.out::println);
@@ -65,11 +58,9 @@ public class OutputView {
     }
 
     public void printAllBenefitsPrice(int price) {
-        System.out.println();
-        System.out.println(PRINT_ALL_BENEFITS_PRICE.getMessage());
+        printMessage(PRINT_ALL_BENEFITS_PRICE.getMessage());
 
         if (price > ZERO.getPrice()) {
-            NumberFormat numberFormat = NumberFormat.getInstance();
             String formattedPrice = numberFormat.format(price);
             System.out.println(MINUS.getFormat() + formattedPrice + WON.getFormat());
         }
@@ -79,17 +70,12 @@ public class OutputView {
     }
 
     public void printAmountOfPayment(int price) {
-        System.out.println();
-        System.out.println(PRINT_AMOUNT_OF_PAYMENT.getMessage());
-
-        NumberFormat numberFormat = NumberFormat.getInstance();
-        String formattedPrice = numberFormat.format(price);
-        System.out.println(formattedPrice + WON.getFormat());
+        printMessage(PRINT_AMOUNT_OF_PAYMENT.getMessage());
+        printPrice(price);
     }
 
     public void printBadge(String badge) {
-        System.out.println();
-        System.out.println(PRINT_BADGE.getMessage());
+        printMessage(PRINT_BADGE.getMessage());
 
         if (!badge.equals("")) {
             System.out.println(badge);
@@ -98,5 +84,18 @@ public class OutputView {
         if (badge.equals("")) {
             System.out.println(PRINT_NOTHING.getMessage());
         }
+    }
+
+    private void printMessage(String message) {
+        System.out.println(message);
+        System.out.println();
+    }
+
+    private void printPrice(int price) {
+        System.out.println(formatPrice(price) + WON.getFormat());
+    }
+
+    private String formatPrice(int price) {
+        return numberFormat.format(price);
     }
 }
