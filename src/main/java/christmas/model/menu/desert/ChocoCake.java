@@ -9,7 +9,7 @@ public class ChocoCake {
     private final int price = CHOCO_CAKE_PRICE.getPrice();
     private int count;
 
-    public ChocoCake(int count) {
-        this.count = count;
+    public ChocoCake() {
+        this.count++;
     }
 }

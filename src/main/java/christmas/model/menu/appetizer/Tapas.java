@@ -9,7 +9,7 @@ public class Tapas {
     private final int price = TAPAS_PRICE.getPrice();
     private int count;
 
-    public Tapas(int count) {
-        this.count = count;
+    public Tapas() {
+        this.count++;
     }
 }

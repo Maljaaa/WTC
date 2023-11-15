@@ -9,7 +9,7 @@ public class CokeZero {
     private final int price = COKE_ZERO_PRICE.getPrice();
     private int count;
 
-    public CokeZero(int count) {
-        this.count = count;
+    public CokeZero() {
+        this.count++;
     }
 }

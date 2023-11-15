@@ -9,7 +9,7 @@ public class MushroomSoup {
     private final int price = MUSHROOM_SOUP_PRICE.getPrice();
     private int count;
 
-    public MushroomSoup(int count) {
-        this.count = count;
+    public MushroomSoup() {
+        this.count++;
     }
 }

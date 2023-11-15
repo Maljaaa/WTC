@@ -9,7 +9,7 @@ public class SeafoodPasta {
     private final int price = SEAFOOD_PASTA_PRICE.getPrice();
     private int count;
 
-    public SeafoodPasta(int count) {
-        this.count = count;
+    public SeafoodPasta() {
+        this.count++;
     }
 }

@@ -9,7 +9,7 @@ public class ChristmasPasta {
     private final int price = CHRISTMAS_PASTA_PRICE.getPrice();
     private int count;
 
-    public ChristmasPasta(int count) {
-        this.count = count;
+    public ChristmasPasta() {
+        this.count++;
     }
 }

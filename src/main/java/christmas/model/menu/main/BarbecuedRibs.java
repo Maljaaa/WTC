@@ -9,7 +9,7 @@ public class BarbecuedRibs {
     private final int price = BARBECUED_RIBS_PRICE.getPrice();
     private int count;
 
-    public BarbecuedRibs(int count) {
-        this.count = count;
+    public BarbecuedRibs() {
+        this.count++;
     }
 }

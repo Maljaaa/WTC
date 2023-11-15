@@ -9,7 +9,7 @@ public class TBoneSteak {
     private final int price = T_BONE_STEAK_PRICE.getPrice();
     private int count;
 
-    public TBoneSteak(int count) {
-        this.count = count;
+    public TBoneSteak() {
+        this.count++;
     }
 }

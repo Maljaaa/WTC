@@ -9,7 +9,7 @@ public class Icecream {
     private final int price = ICECREAM_PRICE.getPrice();
     private int count;
 
-    public Icecream(int count) {
-        this.count = count;
+    public Icecream() {
+        this.count++;
     }
 }

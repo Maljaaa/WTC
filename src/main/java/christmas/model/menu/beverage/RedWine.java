@@ -9,7 +9,7 @@ public class RedWine {
     private final int price = RED_WINE_PRICE.getPrice();
     private int count;
 
-    public RedWine(int count) {
-        this.count = count;
+    public RedWine() {
+        this.count++;
     }
 }

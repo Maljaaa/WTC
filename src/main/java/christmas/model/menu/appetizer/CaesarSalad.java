@@ -9,7 +9,7 @@ public class CaesarSalad {
     private final int price = CAESAR_SALAD_PRICE.getPrice();
     private int count;
 
-    public CaesarSalad(int count) {
-        this.count = count;
+    public CaesarSalad() {
+        this.count++;
     }
 }

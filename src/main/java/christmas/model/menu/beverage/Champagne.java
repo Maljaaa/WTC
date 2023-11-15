@@ -9,7 +9,7 @@ public class Champagne {
     private final int price = CHAMPAGNE_PRICE.getPrice();
     private int count;
 
-    public Champagne(int count) {
-        this.count = count;
+    public Champagne() {
+        this.count++;
     }
 }
