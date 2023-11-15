@@ -6,6 +6,7 @@ public class MenuEventPrice {
     private int weekdayEventPrice;
     private int holidayEventPrice;
     private int specialEventPrice;
+    private int giveAwayEventPrice;
 
     public int getdDayEventPrice() {
         return dDayEventPrice;
@@ -37,5 +38,13 @@ public class MenuEventPrice {
 
     public void setSpecialEventPrice(int specialEventPrice) {
         this.specialEventPrice = specialEventPrice;
+    }
+
+    public int getGiveAwayEventPrice() {
+        return giveAwayEventPrice;
+    }
+
+    public void setGiveAwayEventPrice(int giveAwayEventPrice) {
+        this.giveAwayEventPrice = giveAwayEventPrice;
     }
 }

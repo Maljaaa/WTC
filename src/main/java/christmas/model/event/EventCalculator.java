@@ -17,7 +17,8 @@ public class EventCalculator {
         isDdayEvent(date);
         isWeekDayEvent(date);
         isHolidayEvent(date);
-        isSpecialEvent();
+        isSpecialEvent(date);
+        isGiveAwayEvent();
     }
 
     private void isDdayEvent(String date) {
@@ -41,10 +42,17 @@ public class EventCalculator {
         }
     }
 
-    private void isSpecialEvent() {
+    private void isSpecialEvent(String date) {
+        if (SPECIAL_EVENT.getPeriod()
+                .contains(date)) {
+            menuEventPrice.setSpecialEventPrice(SPECIAL_PRICE.getPrice());
+        }
+    }
+
+    private void isGiveAwayEvent() {
         MenuAllPrice menuAllPrice = new MenuAllPrice();
-        if (menuAllPrice.getAllPrice() > SPECIAL_PRICE.getPrice()) {
-            menuEventPrice.setSpecialEventPrice(CHAMPAGNE_PRICE.getPrice());
+        if (menuAllPrice.getAllPrice() > GIVEAWAY_PRICE.getPrice()) {
+            menuEventPrice.setGiveAwayEventPrice(CHAMPAGNE_PRICE.getPrice());
         }
     }
 }
