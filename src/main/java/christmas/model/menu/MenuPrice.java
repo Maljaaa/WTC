@@ -1,6 +1,6 @@
 package christmas.model.menu;
 
-public enum menuPrice {
+public enum MenuPrice {
     CAESAR_SALAD_PRICE(8000),
     MUSHROOM_SOUP_PRICE(6000),
     TAPAS_PRICE(5500),
@@ -16,7 +16,7 @@ public enum menuPrice {
 
     private int price;
 
-    menuPrice(int price) {
+    MenuPrice(int price) {
         this.price = price;
     }
 

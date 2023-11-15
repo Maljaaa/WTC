@@ -1,7 +1,7 @@
 package christmas.model.menu.desert;
 
-import static christmas.model.menu.menuName.*;
-import static christmas.model.menu.menuPrice.*;
+import static christmas.model.menu.MenuName.*;
+import static christmas.model.menu.MenuPrice.*;
 
 public class ChocoCake {
 

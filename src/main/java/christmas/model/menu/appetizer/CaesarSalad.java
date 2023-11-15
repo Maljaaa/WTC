@@ -1,7 +1,7 @@
 package christmas.model.menu.appetizer;
 
-import static christmas.model.menu.menuName.CAESAR_SALAD;
-import static christmas.model.menu.menuPrice.CAESAR_SALAD_PRICE;
+import static christmas.model.menu.MenuName.CAESAR_SALAD;
+import static christmas.model.menu.MenuPrice.CAESAR_SALAD_PRICE;
 
 public class CaesarSalad {
 
