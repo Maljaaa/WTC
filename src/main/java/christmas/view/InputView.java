@@ -3,11 +3,13 @@ package christmas.view;
 import christmas.model.menu.MenuName;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 import static camp.nextstep.edu.missionutils.Console.readLine;
 import static christmas.view.Error.*;
+import static christmas.view.ErrorStandard.*;
 import static christmas.view.Format.*;
 import static christmas.view.Show.*;
 import static java.util.stream.Collectors.*;
@@ -71,7 +73,12 @@ public class InputView {
             }
         }
 
-        if (orders.size() > 20) {
+        if (orders.size() > MAX_ORDER_COUNT.getNumber()) {
+            throw new IllegalArgumentException();
+        }
+
+        Set<String> uniqueOrders = new HashSet<>(orders);
+        if (uniqueOrders.size() < orders.size()) {
             throw new IllegalArgumentException();
         }
     }
@@ -85,7 +92,7 @@ public class InputView {
     private void validateOrderCount(String order) {
         List<Integer> orderMenusCount = getMenuCount(order);
         for (Integer orderCount : orderMenusCount) {
-            if (orderCount <= 0) {
+            if (orderCount <= MIN_ORDER_COUNT.getNumber()) {
                 throw new IllegalArgumentException();
             }
         }
