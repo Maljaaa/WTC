@@ -1,6 +1,6 @@
 package christmas.model.event;
 
-public enum EventPrice {
+public enum EventPriceStandard {
     EVENT_PRICE(2023),
     D_DAY_PRICE(1000),
     SPECIAL_PRICE(1000),
@@ -8,7 +8,7 @@ public enum EventPrice {
 
     private int price;
 
-    EventPrice(int price) {
+    EventPriceStandard(int price) {
         this.price = price;
     }
 

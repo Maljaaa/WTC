@@ -5,7 +5,7 @@ import christmas.model.menu.MenuCount;
 import christmas.model.menu.MenuEventPrice;
 
 import static christmas.model.event.EventCalendar.*;
-import static christmas.model.event.EventPrice.*;
+import static christmas.model.event.EventPriceStandard.*;
 import static christmas.model.menu.MenuPrice.*;
 
 public class EventCalculator {
