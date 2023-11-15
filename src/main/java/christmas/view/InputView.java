@@ -70,6 +70,10 @@ public class InputView {
                 throw new IllegalArgumentException();
             }
         }
+
+        if (orders.size() > 20) {
+            throw new IllegalArgumentException();
+        }
     }
 
     public List<String> getMenuName(String order) {
