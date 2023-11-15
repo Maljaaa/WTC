@@ -1,5 +1,7 @@
 package christmas.model.menu.desert;
 
+import christmas.model.menu.MenuCount;
+
 import static christmas.model.menu.MenuName.*;
 import static christmas.model.menu.MenuPrice.*;
 
@@ -11,5 +13,11 @@ public class ChocoCake {
 
     public ChocoCake() {
         this.count++;
+        addDesert();
+    }
+
+    private void addDesert() {
+        MenuCount menuCount = new MenuCount();
+        menuCount.addDesertCount();
     }
 }

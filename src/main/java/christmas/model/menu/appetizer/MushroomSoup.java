@@ -1,5 +1,7 @@
 package christmas.model.menu.appetizer;
 
+import christmas.model.menu.MenuCount;
+
 import static christmas.model.menu.MenuName.*;
 import static christmas.model.menu.MenuPrice.*;
 
@@ -11,5 +13,11 @@ public class MushroomSoup {
 
     public MushroomSoup() {
         this.count++;
+        addAppetizer();
+    }
+
+    private void addAppetizer() {
+        MenuCount menuCount = new MenuCount();
+        menuCount.addAppetizerCount();
     }
 }

@@ -1,5 +1,7 @@
 package christmas.model.menu.beverage;
 
+import christmas.model.menu.MenuCount;
+
 import static christmas.model.menu.MenuName.*;
 import static christmas.model.menu.MenuPrice.*;
 
@@ -11,5 +13,11 @@ public class CokeZero {
 
     public CokeZero() {
         this.count++;
+        addBeverage();
+    }
+
+    private void addBeverage() {
+        MenuCount menuCount = new MenuCount();
+        menuCount.addBeverageCount();
     }
 }
