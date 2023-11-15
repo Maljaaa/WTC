@@ -31,7 +31,6 @@ public class EventCalculator {
     private void isWeekDayEvent(String date) {
         if (WEEKDAY_EVENT.getPeriod()
                 .contains(date)) {
-            System.out.println(menuCount.getDesertCount());
             eventPrice.setWeekdayEventPrice(menuCount.getDesertCount() * EVENT_PRICE.getPrice());
         }
     }
