@@ -87,8 +87,8 @@ public class OutputView {
     }
 
     private void printMessage(String message) {
-        System.out.println(message);
         System.out.println();
+        System.out.println(message);
     }
 
     private void printPrice(int price) {
