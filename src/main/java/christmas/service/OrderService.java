@@ -14,15 +14,16 @@ import christmas.model.menu.main.SeafoodPasta;
 import christmas.model.menu.main.TBoneSteak;
 
 import java.util.List;
+import java.util.stream.IntStream;
 
 import static christmas.model.menu.MenuName.*;
 
 public class OrderService {
 
-    public void orderMenu(List<String> menu) {
-        for (String food : menu) {
-            checkOrder(food);
-        }
+    public void orderMenu(List<String> menu, List<Integer> menuCount) {
+        IntStream.range(0, menu.size())
+                .forEach(i -> IntStream.range(0, menuCount.get(i))
+                        .forEach(j -> checkOrder(menu.get(i))));
     }
 
     private void checkOrder(String food) {

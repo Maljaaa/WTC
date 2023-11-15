@@ -19,7 +19,7 @@ public class EventController {
     EventService eventService = new EventService();
     OrderService orderService = new OrderService();
     EventCalculator eventCalculator = new EventCalculator();
-    MenuAllPrice menuAllPrice = new MenuAllPrice();
+    MenuAllPrice menuAllPrice = MenuAllPrice.getInstance();
     MenuEventPrice menuEventPrice = new MenuEventPrice();
     EventPrice eventPrice = new EventPrice();
     EventBadge eventBadge = new EventBadge();
@@ -30,13 +30,16 @@ public class EventController {
         String order = inputView.readOrder();
         List<String> menuName = eventService.getMenuName(order);
         List<Integer> menuCount = eventService.getMenuCount(order);
-        orderService.orderMenu(menuName);
+        orderService.orderMenu(menuName, menuCount);
         if (eventService.isPossibleEvent()) {
             eventCalculator.calculateEvent(date);
         }
+
         outputView.printEventPreview(date);
         outputView.printOrderMenu(menuName, menuCount);
+
         outputView.printAllPrice(menuAllPrice.getAllPrice());
+
         boolean give = false;
         if (menuEventPrice.getSpecialEventPrice() != 0) {
             give = true;
