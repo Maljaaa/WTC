@@ -26,8 +26,8 @@ public class EventController {
         outputView.printHello();
         String date = inputView.readDate();
         String order = inputView.readOrder();
-        List<String> menuName = eventService.getMenuName(order);
-        List<Integer> menuCount = eventService.getMenuCount(order);
+        List<String> menuName = inputView.getMenuName(order);
+        List<Integer> menuCount = inputView.getMenuCount(order);
         orderService.orderMenu(menuName, menuCount);
         if (eventService.isPossibleEvent()) {
             eventCalculator.calculateEvent(date);

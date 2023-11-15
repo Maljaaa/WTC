@@ -19,6 +19,8 @@ public class InputView {
             .map(MenuName::getMenu)
             .collect(toSet());
 
+    private Set<String> beverageMenus = Set.of("샴페인", "제로콜라", "레드와인");
+
     public String readDate() {
         while (true) {
             try {
@@ -27,17 +29,17 @@ public class InputView {
                 validateDate(date);
                 return date;
             } catch (IllegalArgumentException e) {
-                System.out.println(e.getMessage());
+                System.out.println(INVALID_DATE.getMessage());
             }
         }
     }
 
     private void validateDate(String date) {
         if (!date.matches(NUMBER.getFormat())) {
-            throw new IllegalArgumentException(INVALID_DATE.getMessage());
+            throw new IllegalArgumentException();
         }
         if (Integer.parseInt(date) < 1 || Integer.parseInt(date) > 31) {
-            throw new IllegalArgumentException(INVALID_DATE.getMessage());
+            throw new IllegalArgumentException();
         }
     }
 
@@ -56,8 +58,14 @@ public class InputView {
     }
 
     private void validateOrder(String order) {
-        List<String> orderedMenus = getMenuName(order);
-        for (String menu : orderedMenus) {
+        List<String> orders = getMenuName(order);
+
+        boolean cantOrder = beverageMenus.containsAll(orders);
+        if (cantOrder) {
+            throw new IllegalArgumentException();
+        }
+
+        for (String menu : orders) {
             if (!availableMenus.contains(menu)) {
                 throw new IllegalArgumentException();
             }
