@@ -3,8 +3,8 @@ package christmas.model.menu.appetizer;
 import christmas.model.menu.MenuAllPrice;
 import christmas.model.menu.MenuCount;
 
-import static christmas.model.menu.MenuName.CAESAR_SALAD;
-import static christmas.model.menu.MenuPrice.CAESAR_SALAD_PRICE;
+import static christmas.model.menu.utils.MenuName.CAESAR_SALAD;
+import static christmas.model.menu.utils.MenuPrice.CAESAR_SALAD_PRICE;
 
 public class CaesarSalad {
 

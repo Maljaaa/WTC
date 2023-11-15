@@ -1,4 +1,4 @@
-package christmas.service;
+package christmas.service.utils;
 
 public enum Benfits {
     D_DAY("크리스마스 디데이 할인"),

@@ -7,8 +7,8 @@ import christmas.model.event.EventPrice;
 import java.util.ArrayList;
 import java.util.List;
 
-import static christmas.model.event.EventPriceStandard.*;
-import static christmas.service.Benfits.*;
+import static christmas.model.event.utils.EventPriceStandard.*;
+import static christmas.service.utils.Benfits.*;
 
 public class EventService {
 

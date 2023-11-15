@@ -16,7 +16,7 @@ import christmas.model.menu.main.TBoneSteak;
 import java.util.List;
 import java.util.stream.IntStream;
 
-import static christmas.model.menu.MenuName.*;
+import static christmas.model.menu.utils.MenuName.*;
 
 public class OrderService {
 

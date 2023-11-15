@@ -1,7 +1,7 @@
 package christmas.model.event;
 
-import static christmas.model.event.Badge.*;
-import static christmas.model.event.EventPriceStandard.*;
+import static christmas.model.event.utils.Badge.*;
+import static christmas.model.event.utils.EventPriceStandard.*;
 
 public class EventBadge {
 

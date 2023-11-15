@@ -3,9 +3,9 @@ package christmas.model.event;
 import christmas.model.menu.MenuAllPrice;
 import christmas.model.menu.MenuCount;
 
-import static christmas.model.event.EventCalendar.*;
-import static christmas.model.event.EventPriceStandard.*;
-import static christmas.model.menu.MenuPrice.*;
+import static christmas.model.event.utils.EventCalendar.*;
+import static christmas.model.event.utils.EventPriceStandard.*;
+import static christmas.model.menu.utils.MenuPrice.*;
 
 public class EventCalculator {
 

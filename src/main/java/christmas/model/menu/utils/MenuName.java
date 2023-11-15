@@ -1,4 +1,4 @@
-package christmas.model.menu;
+package christmas.model.menu.utils;
 
 public enum MenuName {
     CAESAR_SALAD("시저샐러드"),

@@ -3,8 +3,8 @@ package christmas.model.menu.beverage;
 import christmas.model.menu.MenuAllPrice;
 import christmas.model.menu.MenuCount;
 
-import static christmas.model.menu.MenuName.*;
-import static christmas.model.menu.MenuPrice.*;
+import static christmas.model.menu.utils.MenuName.*;
+import static christmas.model.menu.utils.MenuPrice.*;
 
 public class CokeZero {
 

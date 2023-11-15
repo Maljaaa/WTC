@@ -1,4 +1,4 @@
-package christmas.model.event;
+package christmas.model.event.utils;
 
 public enum EventPriceStandard {
     EVENT_PRICE(2023),

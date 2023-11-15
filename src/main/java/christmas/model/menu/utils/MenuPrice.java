@@ -1,4 +1,4 @@
-package christmas.model.menu;
+package christmas.model.menu.utils;
 
 public enum MenuPrice {
     CAESAR_SALAD_PRICE(8000),
