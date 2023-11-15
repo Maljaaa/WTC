@@ -29,14 +29,14 @@ public class OutputView {
         System.out.println(allPrice + WON.getFormat());
     }
 
-    public void printGiveawayMenu(int allPrice) {
+    public void printGiveawayMenu(boolean give) {
         System.out.println(PRINT_GIVEAWAY_MENU.getMessage());
 
-        if (allPrice >= GIVEAWAY_PRICE.getPrice()) {
+        if (give) {
             System.out.println(PRINT_CHAMPAGNE.getMessage());
         }
 
-        if (allPrice < GIVEAWAY_PRICE.getPrice()) {
+        if (!give) {
             System.out.println(PRINT_NOTHING.getMessage());
         }
     }
