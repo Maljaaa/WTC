@@ -6,6 +6,7 @@ import christmas.model.menu.MenuAllPrice;
 import christmas.model.event.EventPrice;
 import christmas.service.EventService;
 import christmas.service.OrderService;
+import christmas.view.InputOrder;
 import christmas.view.InputView;
 import christmas.view.OutputView;
 
@@ -15,6 +16,7 @@ public class EventController {
 
     OutputView outputView = new OutputView();
     InputView inputView = new InputView();
+    InputOrder inputOrder = new InputOrder();
     EventService eventService = new EventService();
     OrderService orderService = new OrderService();
     EventCalculator eventCalculator = new EventCalculator();
