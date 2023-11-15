@@ -36,6 +36,9 @@ public class InputView {
         if (!date.matches(NUMBER.getFormat())) {
             throw new IllegalArgumentException(INVALID_DATE.getMessage());
         }
+        if (Integer.parseInt(date) < 1 || Integer.parseInt(date) > 31) {
+            throw new IllegalArgumentException(INVALID_DATE.getMessage());
+        }
     }
 
     public String readOrder() {
