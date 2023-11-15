@@ -18,7 +18,7 @@ public class OutputView {
     }
 
     public void printOrderMenu(List<String> menu, List<Integer> count) {
-        System.out.println(PRINT_ORDER_MENU);
+        System.out.println(PRINT_ORDER_MENU.getMessage());
         for (String food : menu) {
             System.out.println(food + " " + count + COUNT.getFormat());
         }
@@ -79,7 +79,7 @@ public class OutputView {
         }
 
         if (badge.equals("")) {
-            System.out.println(PRINT_NOTHING);
+            System.out.println(PRINT_NOTHING.getMessage());
         }
     }
 }

@@ -1,8 +1,5 @@
 package christmas.model.event;
 
-import christmas.model.menu.MenuAllPrice;
-import christmas.model.menu.MenuEventPrice;
-
 public class EventPrice {
 
     private int eventPrice;
