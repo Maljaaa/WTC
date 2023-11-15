@@ -73,10 +73,6 @@ public class InputView {
             }
         }
 
-        if (orders.size() > MAX_ORDER_COUNT.getNumber()) {
-            throw new IllegalArgumentException();
-        }
-
         Set<String> uniqueOrders = new HashSet<>(orders);
         if (uniqueOrders.size() < orders.size()) {
             throw new IllegalArgumentException();
@@ -90,11 +86,17 @@ public class InputView {
     }
 
     private void validateOrderCount(String order) {
-        List<Integer> orderMenusCount = getMenuCount(order);
-        for (Integer orderCount : orderMenusCount) {
+        List<Integer> ordersCount = getMenuCount(order);
+        for (Integer orderCount : ordersCount) {
             if (orderCount <= MIN_ORDER_COUNT.getNumber()) {
                 throw new IllegalArgumentException();
             }
+        }
+
+        if (ordersCount.stream()
+                .mapToInt(Integer::intValue)
+                .sum() > MAX_ORDER_COUNT.getNumber()) {
+            throw new IllegalArgumentException();
         }
     }
 
