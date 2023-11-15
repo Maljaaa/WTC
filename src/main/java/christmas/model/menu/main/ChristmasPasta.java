@@ -1,5 +1,6 @@
 package christmas.model.menu.main;
 
+import christmas.model.MenuAllPrice;
 import christmas.model.menu.MenuCount;
 
 import static christmas.model.menu.MenuName.*;
@@ -14,10 +15,16 @@ public class ChristmasPasta {
     public ChristmasPasta() {
         this.count++;
         addMain();
+        addPayment();
     }
 
     private void addMain() {
         MenuCount menuCount = new MenuCount();
         menuCount.addMainCount();
+    }
+
+    private void addPayment() {
+        MenuAllPrice menuAllPrice = new MenuAllPrice();
+        menuAllPrice.addPayment(price);
     }
 }
