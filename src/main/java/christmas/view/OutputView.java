@@ -13,7 +13,7 @@ public class OutputView {
         System.out.println();
     }
 
-    public void printEventPreview(int date) {
+    public void printEventPreview(String date) {
         System.out.println("12월 " + date + "일" + PRINT_EVENT_PREVIEW.getMessage());
     }
 
