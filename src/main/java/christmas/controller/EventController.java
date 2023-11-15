@@ -1,6 +1,7 @@
 package christmas.controller;
 
 import christmas.model.event.EventCalculator;
+import christmas.model.event.EventPrice;
 import christmas.model.menu.MenuAllPrice;
 import christmas.model.menu.MenuEventPrice;
 import christmas.service.EventService;
@@ -19,6 +20,7 @@ public class EventController {
     EventCalculator eventCalculator = new EventCalculator();
     MenuAllPrice menuAllPrice = new MenuAllPrice();
     MenuEventPrice menuEventPrice = new MenuEventPrice();
+    EventPrice eventPrice = new EventPrice();
 
     public void run() {
         outputView.printHello();
@@ -39,5 +41,7 @@ public class EventController {
         }
         outputView.printGiveawayMenu(give);
         outputView.printBenefitDetails(eventService.getBenefits(), eventService.getBenefitsPrice());
+        outputView.printAllBenefitsPrice(eventPrice.getEventPrice());
+
     }
 }

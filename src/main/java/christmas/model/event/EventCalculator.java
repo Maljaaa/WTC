@@ -11,6 +11,7 @@ import static christmas.model.menu.MenuPrice.*;
 public class EventCalculator {
 
     MenuEventPrice menuEventPrice = new MenuEventPrice();
+    EventPrice eventPrice = new EventPrice();
     MenuCount menuCount = new MenuCount();
 
     public void calculateEvent(String date) {
@@ -25,6 +26,7 @@ public class EventCalculator {
         if (D_DAY_EVENT.getPeriod()
                 .contains(date)) {
             menuEventPrice.setdDayEventPrice(D_DAY_PRICE.getPrice() + (((Integer.parseInt(date) % 25) * 100) - 100));
+            eventPrice.addEventPrice(menuEventPrice.getdDayEventPrice());
         }
     }
 
@@ -32,6 +34,7 @@ public class EventCalculator {
         if (WEEKDAY_EVENT.getPeriod()
                 .contains(date)) {
             menuEventPrice.setWeekdayEventPrice(menuCount.getDesertCount() * EVENT_PRICE.getPrice());
+            eventPrice.addEventPrice(menuEventPrice.getWeekdayEventPrice());
         }
     }
 
@@ -39,6 +42,7 @@ public class EventCalculator {
         if (HOLIDAY_EVENT.getPeriod()
                 .contains(date)) {
             menuEventPrice.setHolidayEventPrice(menuCount.getMainCount() * EVENT_PRICE.getPrice());
+            eventPrice.addEventPrice(menuEventPrice.getHolidayEventPrice());
         }
     }
 
@@ -46,6 +50,7 @@ public class EventCalculator {
         if (SPECIAL_EVENT.getPeriod()
                 .contains(date)) {
             menuEventPrice.setSpecialEventPrice(SPECIAL_PRICE.getPrice());
+            eventPrice.addEventPrice(menuEventPrice.getSpecialEventPrice());
         }
     }
 
@@ -53,6 +58,7 @@ public class EventCalculator {
         MenuAllPrice menuAllPrice = new MenuAllPrice();
         if (menuAllPrice.getAllPrice() > GIVEAWAY_PRICE.getPrice()) {
             menuEventPrice.setGiveAwayEventPrice(CHAMPAGNE_PRICE.getPrice());
+            eventPrice.addEventPrice(menuEventPrice.getGiveAwayEventPrice());
         }
     }
 }
