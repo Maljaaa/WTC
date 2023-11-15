@@ -1,6 +1,6 @@
 package christmas.service;
 
-import christmas.model.MenuAllPrice;
+import christmas.model.menu.MenuAllPrice;
 import christmas.model.menu.MenuCount;
 
 import java.util.Arrays;
