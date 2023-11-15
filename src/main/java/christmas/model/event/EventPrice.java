@@ -60,11 +60,18 @@ public class EventPrice {
         this.giveAwayEventPrice = giveAwayEventPrice;
     }
 
-    public int getEventPrice() {
+    public int getAllEventPrice() {
         return eventPrice = getdDayEventPrice() +
                 getWeekdayEventPrice() +
                 getHolidayEventPrice() +
                 getSpecialEventPrice() +
                 getGiveAwayEventPrice();
+    }
+
+    public int getEventPrice() {
+        return eventPrice = getdDayEventPrice() +
+                getWeekdayEventPrice() +
+                getHolidayEventPrice() +
+                getSpecialEventPrice();
     }
 }

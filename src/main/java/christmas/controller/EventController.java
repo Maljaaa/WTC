@@ -39,13 +39,14 @@ public class EventController {
         outputView.printAllPrice(menuAllPrice.getAllPrice());
 
         boolean give = eventPrice.getGiveAwayEventPrice() != 0;
-        System.out.println(eventPrice.getGiveAwayEventPrice());
         outputView.printGiveawayMenu(give);
 
         outputView.printBenefitDetails(eventService.getBenefits(), eventService.getBenefitsPrices());
-        outputView.printAllBenefitsPrice(eventPrice.getEventPrice());
+
+        outputView.printAllBenefitsPrice(eventPrice.getAllEventPrice());
+
         outputView.printAmountOfPayment(menuAllPrice.getAllPrice() - eventPrice.getEventPrice());
-        eventBadge.setBadge(eventPrice.getEventPrice());
+        eventBadge.setBadge(eventPrice.getAllEventPrice());
         outputView.printBadge(eventBadge.getBadge());
     }
 }
