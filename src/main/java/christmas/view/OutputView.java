@@ -22,6 +22,7 @@ public class OutputView {
     public void printOrderMenu(List<String> menu, List<Integer> count) {
         System.out.println();
         System.out.println(PRINT_ORDER_MENU.getMessage());
+
         IntStream.range(0, menu.size())
                 .mapToObj(i -> menu.get(i) + " " + count.get(i) + COUNT.getFormat())
                 .forEach(System.out::println);
