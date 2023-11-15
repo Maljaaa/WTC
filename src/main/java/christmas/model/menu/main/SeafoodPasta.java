@@ -1,6 +1,6 @@
 package christmas.model.menu.main;
 
-import christmas.model.MenuAllPrice;
+import christmas.model.menu.MenuAllPrice;
 import christmas.model.menu.MenuCount;
 
 import static christmas.model.menu.MenuName.*;
