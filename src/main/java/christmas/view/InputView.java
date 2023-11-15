@@ -8,15 +8,19 @@ import static christmas.view.Show.*;
 public class InputView {
 
     public String readDate() {
-        System.out.println(READ_DATE.getMessage());
-        String date = readLine();
-
-        isInt(date);
-
-        return date;
+        while (true) {
+            try {
+                System.out.println(READ_DATE.getMessage());
+                String date = readLine();
+                validateDate(date);
+                return date;
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
+        }
     }
 
-    private void isInt(String date) {
+    private void validateDate(String date) {
         if (!date.matches(NUMBER.getFormat())) {
             throw new IllegalArgumentException(INVALID_DATE.getMessage());
         }
