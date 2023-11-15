@@ -1,4 +1,4 @@
-package christmas.view;
+package christmas.view.utils;
 
 public enum ErrorStandard {
     MAX_ORDER_COUNT(20),

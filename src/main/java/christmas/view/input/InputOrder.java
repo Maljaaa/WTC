@@ -1,4 +1,4 @@
-package christmas.view;
+package christmas.view.input;
 
 import christmas.model.menu.MenuName;
 
@@ -8,10 +8,10 @@ import java.util.List;
 import java.util.Set;
 
 import static camp.nextstep.edu.missionutils.Console.readLine;
-import static christmas.view.Error.INVALID_ORDER;
-import static christmas.view.ErrorStandard.MAX_ORDER_COUNT;
-import static christmas.view.ErrorStandard.MIN_ORDER_COUNT;
-import static christmas.view.Show.READ_ORDER;
+import static christmas.view.utils.Error.INVALID_ORDER;
+import static christmas.view.utils.ErrorStandard.MAX_ORDER_COUNT;
+import static christmas.view.utils.ErrorStandard.MIN_ORDER_COUNT;
+import static christmas.view.utils.Show.READ_ORDER;
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toSet;
 

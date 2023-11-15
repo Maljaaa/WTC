@@ -1,9 +1,9 @@
-package christmas.view;
+package christmas.view.input;
 
 import static camp.nextstep.edu.missionutils.Console.readLine;
-import static christmas.view.Error.INVALID_DATE;
-import static christmas.view.Format.NUMBER;
-import static christmas.view.Show.READ_DATE;
+import static christmas.view.utils.Error.INVALID_DATE;
+import static christmas.view.utils.Format.NUMBER;
+import static christmas.view.utils.Show.READ_DATE;
 
 public class InputDate {
     public String readDate() {

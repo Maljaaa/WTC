@@ -1,4 +1,4 @@
-package christmas.view;
+package christmas.view.utils;
 
 public enum Price {
     GIVEAWAY_PRICE(120000),

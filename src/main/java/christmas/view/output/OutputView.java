@@ -1,12 +1,12 @@
-package christmas.view;
+package christmas.view.output;
 
 import java.text.NumberFormat;
 import java.util.List;
 import java.util.stream.IntStream;
 
-import static christmas.view.Format.*;
-import static christmas.view.Price.*;
-import static christmas.view.Show.*;
+import static christmas.view.utils.Format.*;
+import static christmas.view.utils.Price.*;
+import static christmas.view.utils.Show.*;
 
 public class OutputView {
 

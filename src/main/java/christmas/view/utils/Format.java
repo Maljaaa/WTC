@@ -1,4 +1,4 @@
-package christmas.view;
+package christmas.view.utils;
 
 public enum Format {
     NUMBER("-?\\d+"),

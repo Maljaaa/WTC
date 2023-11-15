@@ -6,9 +6,9 @@ import christmas.model.menu.MenuAllPrice;
 import christmas.model.event.EventPrice;
 import christmas.service.EventService;
 import christmas.service.OrderService;
-import christmas.view.InputOrder;
-import christmas.view.InputView;
-import christmas.view.OutputView;
+import christmas.view.input.InputOrder;
+import christmas.view.input.InputView;
+import christmas.view.output.OutputView;
 
 import java.util.List;
 
