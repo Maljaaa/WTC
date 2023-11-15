@@ -7,13 +7,13 @@ import static christmas.view.Show.*;
 
 public class InputView {
 
-    public int readDate() {
+    public String readDate() {
         System.out.println(READ_DATE.getMessage());
         String date = readLine();
 
         isInt(date);
 
-        return Integer.parseInt(date);
+        return date;
     }
 
     private void isInt(String date) {
@@ -27,6 +27,4 @@ public class InputView {
 
         return readLine();
     }
-
-
 }

@@ -33,9 +33,9 @@ class InputViewTest {
     @Test
     public void validInputTest() {
         //given
-        int expectedNumber = 25;
+        String expectedNumber = "25";
         //when
-        int actualNumber = inputView.readDate();
+        String actualNumber = inputView.readDate();
         //then
         assertEquals(expectedNumber, actualNumber);
         System.setIn(originalInputStream);
