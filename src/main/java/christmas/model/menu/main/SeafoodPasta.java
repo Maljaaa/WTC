@@ -19,7 +19,7 @@ public class SeafoodPasta {
     }
 
     private void addMain() {
-        MenuCount menuCount = new MenuCount();
+        MenuCount menuCount = MenuCount.getInstance();
         menuCount.addMainCount();
     }
 

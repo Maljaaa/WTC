@@ -2,9 +2,8 @@ package christmas.controller;
 
 import christmas.model.event.EventBadge;
 import christmas.model.event.EventCalculator;
-import christmas.model.event.EventPrice;
 import christmas.model.menu.MenuAllPrice;
-import christmas.model.menu.MenuEventPrice;
+import christmas.model.event.EventPrice;
 import christmas.service.EventService;
 import christmas.service.OrderService;
 import christmas.view.InputView;
@@ -20,8 +19,7 @@ public class EventController {
     OrderService orderService = new OrderService();
     EventCalculator eventCalculator = new EventCalculator();
     MenuAllPrice menuAllPrice = MenuAllPrice.getInstance();
-    MenuEventPrice menuEventPrice = new MenuEventPrice();
-    EventPrice eventPrice = new EventPrice();
+    EventPrice eventPrice = EventPrice.getInstance();
     EventBadge eventBadge = new EventBadge();
 
     public void run() {
@@ -40,12 +38,11 @@ public class EventController {
 
         outputView.printAllPrice(menuAllPrice.getAllPrice());
 
-        boolean give = false;
-        if (menuEventPrice.getSpecialEventPrice() != 0) {
-            give = true;
-        }
+        boolean give = eventPrice.getGiveAwayEventPrice() != 0;
+        System.out.println(eventPrice.getGiveAwayEventPrice());
         outputView.printGiveawayMenu(give);
-        outputView.printBenefitDetails(eventService.getBenefits(), eventService.getBenefitsPrice());
+
+        outputView.printBenefitDetails(eventService.getBenefits(), eventService.getBenefitsPrices());
         outputView.printAllBenefitsPrice(eventPrice.getEventPrice());
         outputView.printAmountOfPayment(menuAllPrice.getAllPrice() - eventPrice.getEventPrice());
         eventBadge.setBadge(eventPrice.getEventPrice());

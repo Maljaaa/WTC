@@ -2,7 +2,7 @@ package christmas.service;
 
 import christmas.model.menu.MenuAllPrice;
 import christmas.model.menu.MenuCount;
-import christmas.model.menu.MenuEventPrice;
+import christmas.model.event.EventPrice;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -30,7 +30,7 @@ public class EventService {
 
     public boolean isPossibleEvent() {
         MenuAllPrice menuAllPrice = MenuAllPrice.getInstance();
-        MenuCount menuCount = new MenuCount();
+        MenuCount menuCount = MenuCount.getInstance();
 
         if (menuAllPrice.getAllPrice() < POSSIBLE_PRICE.getPrice()) {
             return false;
@@ -44,87 +44,87 @@ public class EventService {
     }
 
     public List<String> getBenefits() {
-        MenuEventPrice menuEventPrice = new MenuEventPrice();
+        EventPrice eventPrice = EventPrice.getInstance();
         List<String> benefits = new ArrayList<>();
 
-        isDdayBenefit(menuEventPrice, benefits);
-        isWeekdayBenefit(menuEventPrice, benefits);
-        isHolidayBenefit(menuEventPrice, benefits);
-        isSpecialBenefit(menuEventPrice, benefits);
-        isGiveAwayBenefit(menuEventPrice, benefits);
+        isDdayBenefit(eventPrice, benefits);
+        isWeekdayBenefit(eventPrice, benefits);
+        isHolidayBenefit(eventPrice, benefits);
+        isSpecialBenefit(eventPrice, benefits);
+        isGiveAwayBenefit(eventPrice, benefits);
         return benefits;
     }
 
-    private void isDdayBenefit(MenuEventPrice menuEventPrice, List<String> benefits) {
-        if(menuEventPrice.getdDayEventPrice() != 0) {
+    private void isDdayBenefit(EventPrice eventPrice, List<String> benefits) {
+        if(eventPrice.getdDayEventPrice() != 0) {
             benefits.add(D_DAY.getBenefit());
         }
     }
 
-    private void isWeekdayBenefit(MenuEventPrice menuEventPrice, List<String> benefits) {
-        if(menuEventPrice.getWeekdayEventPrice() != 0) {
+    private void isWeekdayBenefit(EventPrice eventPrice, List<String> benefits) {
+        if(eventPrice.getWeekdayEventPrice() != 0) {
             benefits.add(WEEKDAY.getBenefit());
         }
     }
 
-    private void isHolidayBenefit(MenuEventPrice menuEventPrice, List<String> benefits) {
-        if(menuEventPrice.getHolidayEventPrice() != 0) {
+    private void isHolidayBenefit(EventPrice eventPrice, List<String> benefits) {
+        if(eventPrice.getHolidayEventPrice() != 0) {
             benefits.add(HOLIDAY.getBenefit());
         }
     }
 
-    private void isSpecialBenefit(MenuEventPrice menuEventPrice, List<String> benefits) {
-        if(menuEventPrice.getSpecialEventPrice() != 0) {
+    private void isSpecialBenefit(EventPrice eventPrice, List<String> benefits) {
+        if(eventPrice.getSpecialEventPrice() != 0) {
             benefits.add(SPECIAL.getBenefit());
         }
     }
 
-    private void isGiveAwayBenefit(MenuEventPrice menuEventPrice, List<String> benefits) {
-        if(menuEventPrice.getGiveAwayEventPrice() != 0) {
+    private void isGiveAwayBenefit(EventPrice eventPrice, List<String> benefits) {
+        if(eventPrice.getGiveAwayEventPrice() != 0) {
             benefits.add(GIVE_AWAY.getBenefit());
         }
     }
 
-    public List<Integer> getBenefitsPrice() {
-        MenuEventPrice menuEventPrice = new MenuEventPrice();
+    public List<Integer> getBenefitsPrices() {
+        EventPrice eventPrice = EventPrice.getInstance();
         List<Integer> price = new ArrayList<>();
 
-        isDdayBenefitPrice(menuEventPrice, price);
-        isWeekdayBenefitPrice(menuEventPrice, price);
-        isHolidayBenefitPrice(menuEventPrice, price);
-        isSpecialBenefitPrice(menuEventPrice, price);
-        isGiveAwayBenefitPrice(menuEventPrice, price);
+        isDdayBenefitPrice(eventPrice, price);
+        isWeekdayBenefitPrice(eventPrice, price);
+        isHolidayBenefitPrice(eventPrice, price);
+        isSpecialBenefitPrice(eventPrice, price);
+        isGiveAwayBenefitPrice(eventPrice, price);
 
         return price;
     }
 
-    private void isDdayBenefitPrice(MenuEventPrice menuEventPrice, List<Integer> price) {
-        if(menuEventPrice.getdDayEventPrice() != 0) {
-            price.add(menuEventPrice.getdDayEventPrice());
+    private void isDdayBenefitPrice(EventPrice eventPrice, List<Integer> price) {
+        if(eventPrice.getdDayEventPrice() != 0) {
+            price.add(eventPrice.getdDayEventPrice());
         }
     }
 
-    private void isWeekdayBenefitPrice(MenuEventPrice menuEventPrice, List<Integer> price) {
-        if(menuEventPrice.getWeekdayEventPrice() != 0) {
-            price.add(menuEventPrice.getWeekdayEventPrice());
+    private void isWeekdayBenefitPrice(EventPrice eventPrice, List<Integer> price) {
+        if(eventPrice.getWeekdayEventPrice() != 0) {
+            price.add(eventPrice.getWeekdayEventPrice());
         }
     }
 
-    private void isHolidayBenefitPrice(MenuEventPrice menuEventPrice, List<Integer> price) {
-        if(menuEventPrice.getHolidayEventPrice() != 0) {
-            price.add(menuEventPrice.getHolidayEventPrice());
+    private void isHolidayBenefitPrice(EventPrice eventPrice, List<Integer> price) {
+        if(eventPrice.getHolidayEventPrice() != 0) {
+            price.add(eventPrice.getHolidayEventPrice());
         }
     }
 
-    private void isSpecialBenefitPrice(MenuEventPrice menuEventPrice, List<Integer> price) {
-        if(menuEventPrice.getSpecialEventPrice() != 0) {
-            price.add(menuEventPrice.getSpecialEventPrice());
+    private void isSpecialBenefitPrice(EventPrice eventPrice, List<Integer> price) {
+        if(eventPrice.getSpecialEventPrice() != 0) {
+            price.add(eventPrice.getSpecialEventPrice());
         }
     }
 
-    private void isGiveAwayBenefitPrice(MenuEventPrice menuEventPrice, List<Integer> price) {
-        if(menuEventPrice.getGiveAwayEventPrice() != 0) {
-            price.add(menuEventPrice.getGiveAwayEventPrice());
+    private void isGiveAwayBenefitPrice(EventPrice eventPrice, List<Integer> price) {
+        if(eventPrice.getGiveAwayEventPrice() != 0) {
+            price.add(eventPrice.getGiveAwayEventPrice());
         }
     }
 }

@@ -42,14 +42,13 @@ public class OutputView {
         }
     }
 
-    public void printBenefitDetails(List<String> benefits, List<Integer> price) {
+    public void printBenefitDetails(List<String> benefits, List<Integer> prices) {
         System.out.println(PRINT_BENEFIT_DETAILS.getMessage());
 
-        if (!benefits.isEmpty()) {
-            for (String benefit : benefits) {
-                System.out.println(benefit + COLON.getFormat() + MINUS.getFormat() + price + WON.getFormat());
-            }
-        }
+        IntStream.range(0, benefits.size())
+                .mapToObj(i -> benefits.get(i) + COLON.getFormat() + MINUS.getFormat() + prices.get(i) + WON.getFormat())
+                .forEach(System.out::println);
+
         if (benefits.isEmpty()) {
             System.out.println(PRINT_NOTHING.getMessage());
         }

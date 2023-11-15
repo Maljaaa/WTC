@@ -19,7 +19,7 @@ public class CokeZero {
     }
 
     private void addBeverage() {
-        MenuCount menuCount = new MenuCount();
+        MenuCount menuCount = MenuCount.getInstance();
         menuCount.addBeverageCount();
     }
 

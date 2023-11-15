@@ -19,7 +19,7 @@ public class MushroomSoup {
     }
 
     private void addAppetizer() {
-        MenuCount menuCount = new MenuCount();
+        MenuCount menuCount = MenuCount.getInstance();
         menuCount.addAppetizerCount();
     }
 

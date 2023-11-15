@@ -19,7 +19,7 @@ public class ChocoCake {
     }
 
     private void addDesert() {
-        MenuCount menuCount = new MenuCount();
+        MenuCount menuCount = MenuCount.getInstance();
         menuCount.addDesertCount();
     }
 
