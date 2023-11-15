@@ -1,6 +1,7 @@
 package christmas.view;
 
 import java.util.List;
+import java.util.stream.IntStream;
 
 import static christmas.view.Format.*;
 import static christmas.view.Price.*;
@@ -19,9 +20,9 @@ public class OutputView {
 
     public void printOrderMenu(List<String> menu, List<Integer> count) {
         System.out.println(PRINT_ORDER_MENU.getMessage());
-        for (String food : menu) {
-            System.out.println(food + " " + count + COUNT.getFormat());
-        }
+        IntStream.range(0, menu.size())
+                .mapToObj(i -> menu.get(i) + " " + count.get(i) + COUNT.getFormat())
+                .forEach(System.out::println);
     }
 
     public void printAllPrice(int allPrice) {
@@ -42,7 +43,7 @@ public class OutputView {
     }
 
     public void printBenefitDetails(List<String> benefits, List<Integer> price) {
-        System.out.println(PRINT_BENEFIT_DETAILS);
+        System.out.println(PRINT_BENEFIT_DETAILS.getMessage());
 
         if (!benefits.isEmpty()) {
             for (String benefit : benefits) {
@@ -50,7 +51,7 @@ public class OutputView {
             }
         }
         if (benefits.isEmpty()) {
-            System.out.println(PRINT_NOTHING);
+            System.out.println(PRINT_NOTHING.getMessage());
         }
     }
 

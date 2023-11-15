@@ -55,7 +55,7 @@ public class EventCalculator {
     }
 
     private void isGiveAwayEvent() {
-        MenuAllPrice menuAllPrice = new MenuAllPrice();
+        MenuAllPrice menuAllPrice = MenuAllPrice.getInstance();
         if (menuAllPrice.getAllPrice() > GIVEAWAY_PRICE.getPrice()) {
             menuEventPrice.setGiveAwayEventPrice(CHAMPAGNE_PRICE.getPrice());
             eventPrice.addEventPrice(menuEventPrice.getGiveAwayEventPrice());

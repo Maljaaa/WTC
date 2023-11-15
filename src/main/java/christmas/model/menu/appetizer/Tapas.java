@@ -24,7 +24,7 @@ public class Tapas {
     }
 
     private void addPayment() {
-        MenuAllPrice menuAllPrice = new MenuAllPrice();
+        MenuAllPrice menuAllPrice = MenuAllPrice.getInstance();
         menuAllPrice.addPayment(price);
     }
 }

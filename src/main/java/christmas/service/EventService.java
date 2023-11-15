@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static christmas.model.event.EventPriceStandard.*;
 import static christmas.service.Benfits.*;
 import static java.util.stream.Collectors.*;
 
@@ -28,10 +29,10 @@ public class EventService {
     }
 
     public boolean isPossibleEvent() {
-        MenuAllPrice menuAllPrice = new MenuAllPrice();
+        MenuAllPrice menuAllPrice = MenuAllPrice.getInstance();
         MenuCount menuCount = new MenuCount();
 
-        if (menuAllPrice.getAllPrice() < 10000) {
+        if (menuAllPrice.getAllPrice() < POSSIBLE_PRICE.getPrice()) {
             return false;
         }
 
